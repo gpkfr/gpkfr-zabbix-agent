@@ -60,7 +60,7 @@ class zabbix-agent (
 		}
 		file { '/etc/zabbix/zabbix_agentd.conf':
 			ensure => file,
-			content => template('zabbix/zabbix_agentd.conf.erb'),
+			content => template('zabbix-agent/zabbix_agentd.conf.erb'),
 			owner => root,
 			group => root,
 			mode =>	0644,
