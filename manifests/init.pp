@@ -1,4 +1,4 @@
-# == Class: zabbix
+# == Class: zabbix-agent
 #
 # Full description of class zabbix here.
 #
@@ -29,13 +29,13 @@
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Guillaume Pancak <guillaume@pancak.com>
 #
 # === Copyright
 #
-# Copyright 2014 Your name here, unless otherwise noted.
+# Copyright 2014 Guillaume Pancak, unless otherwise noted.
 #
-class zabbix (
+class zabbix-agent (
 	$version	= 'latest',
 	$environment	= 'production',
 	$server		= '127.0.0.1',
@@ -51,7 +51,7 @@ class zabbix (
                 	key_source => 'http://repo.zabbix.com/zabbix-official-repo.key',
                 }->package { 'zabbix-agent':
                  	ensure => $version,
-			notify => Service['zabbix-agent']
+			            notify => Service['zabbix-agent']
                 }
 
 		service { 'zabbix-agent':
